@@ -145,6 +145,25 @@
           "activity": "${SendActivity_DidNotUnderstand()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EDcXcs",
+        "name": "GetWeather"
+      },
+      "intent": "GetWeather",
+      "condition": "=#GetWeather.Score > 0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "fgwrvb"
+          },
+          "activityProcessed": true,
+          "dialog": "GetWeatherDialog"
+        }
+      ]
     }
   ],
   "generator": "WeatherBot01.lg",
