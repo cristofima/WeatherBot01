@@ -78,7 +78,7 @@
             },
             {
               "property": "dialog.coordinates",
-              "value": "=dialog.lat + \",\" + dialog.lon"
+              "value": "=concat(string(dialog.lat, 'en'), ',', string(dialog.lon, 'en'))"
             }
           ]
         },
