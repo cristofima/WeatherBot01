@@ -85,43 +85,20 @@
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
+            "id": "yRNoaD"
+          },
+          "resultProperty": "dialog.currentConditions",
+          "method": "GET",
+          "url": "https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.1&query=${dialog.coordinates}&subscription-key=${settings.WeatherApiKey}&language=en-US"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
             "id": "Ko6Axr"
           },
           "method": "GET",
-          "url": "https://atlas.microsoft.com/weather/forecast/daily/json?api-version=1.0&query=${dialog.coordinates}&duration=1&subscription-key=${settings.WeatherApiKey}&language=en-US&limit=1",
+          "url": "https://atlas.microsoft.com/weather/forecast/daily/json?api-version=1.1&query=${dialog.coordinates}&duration=5&subscription-key=${settings.WeatherApiKey}&language=en-US",
           "resultProperty": "dialog.dailyForecast"
-        },
-        {
-          "$kind": "Microsoft.SetProperties",
-          "$designer": {
-            "id": "hsbUQb"
-          },
-          "assignments": [
-            {
-              "property": "dialog.dailyForecastContent",
-              "value": "=dialog.dailyForecast.content.forecasts[0]"
-            },
-            {
-              "property": "dialog.icon",
-              "value": "=dialog.dailyForecastContent.day.iconCode"
-            },
-            {
-              "property": "dialog.date",
-              "value": "=dialog.dailyForecastContent.date"
-            },
-            {
-              "property": "dialog.minTemp",
-              "value": "=dialog.dailyForecastContent.temperature.minimum.value"
-            },
-            {
-              "property": "dialog.shortPhrase",
-              "value": "=dialog.dailyForecastContent.day.shortPhrase"
-            },
-            {
-              "property": "dialog.maxTemp",
-              "value": "=dialog.dailyForecastContent.temperature.maximum.value"
-            }
-          ]
         },
         {
           "$kind": "Microsoft.SendActivity",
